@@ -2,7 +2,9 @@ import csv
 import smtplib
 import sys
 
+# Add the path to the emailcreds.py file
 sys.path.insert(1, '/home/ubuntu/Python/')
+# Pull environment variables from emailcreds.py
 from emailcreds import sender_acc, sender_pass
 
 mailserver = smtplib.SMTP('smtp.gmail.com', 587)
