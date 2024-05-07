@@ -8,6 +8,7 @@ sys.path.insert(1, '/home/ubuntu/Python/')
 from emailcreds import sender_acc, sender_pass
 
 mailserver = smtplib.SMTP('smtp.gmail.com', 587)
+csv_file = 'testcsv.csv'
 
 def send_email(sender_acc, sender_pass, receiver_email, subject, message):
     try:
@@ -32,9 +33,9 @@ def generate_emails(csv_file):
             subject = row[2]
             username = row[3]
             password = row[4]
-            message = f"Hi {name},\n\nYour FortiCloud credentials are as follows:\n\nusername - {username}\npassword - {password}\n\n Please login using the URL provided in the qwiklab instructions.\n\nBest regards,\nFortinet CSE"
+            message = f"Hi {name},\n\nWe are looking forward to seeing you in class!\n\nYour FortiCloud credentials are as follows:\n\nusername - {username}\npassword - {password}\n\n Please login using the URL provided in the qwiklab instructions.\n\nIf you have not already done so, please go to 'https://fortinet.qwiklabs.com' and create an account.\n\nBest regards,\nFortinet CSE"
             send_email(sender_acc, sender_pass, receiver_email, subject, message)
 
 # Usage
-csv_file = 'testcsv.csv'
+
 generate_emails(csv_file)

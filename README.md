@@ -8,3 +8,5 @@ For example:
 sender_acc = "youremail@gmail.com"
 sender_pass = "gmailpasskey"
 ```
+
+**Note - If you have a blank line (usually at the bottom) in the CSV, the script will still work, but you will get "IndexError: list index out of range"** 
